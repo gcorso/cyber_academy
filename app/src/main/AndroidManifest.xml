@@ -21,25 +21,29 @@
         </activity>
         <activity
             android:name=".Explore.SectionActivity"
-            android:theme="@style/NoBarTheme"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/NoBarTheme">
         </activity>
         <activity
             android:name=".Explore.QuizActivity"
-            android:theme="@style/NoBarTheme"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoBarTheme">
+        </activity>
+        <activity
+            android:name=".ChatActivity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".ChatActivity"
-                  android:screenOrientation="portrait">
+        <activity
+            android:name=".Tools.ToolsActivity"
+            android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Tools.ToolsActivity"
-                  android:screenOrientation="portrait">
+        <activity
+            android:name=".ProfileActivity"
+            android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".ProfileActivity"
-                  android:screenOrientation="portrait">
-        </activity>
-        <activity android:name=".Tools.PasswordVaultActivity"
-                  android:screenOrientation="portrait">
+        <activity
+            android:name=".Tools.PasswordVaultActivity"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 
