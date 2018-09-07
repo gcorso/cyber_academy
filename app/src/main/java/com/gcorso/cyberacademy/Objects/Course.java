@@ -1,29 +1,35 @@
-package com.gcorso.cyberacademy.Objects;
+package com.gcorso.cyberacademy.objects;
 
 import java.util.List;
 
 public class Course {
-    private int courseid;
+    private int id;
     private String title;
     private List<Lesson> lessons;
+    private int percentageProgress;
 
-    public Course(int courseid, String title) {
-        this.courseid = courseid;
+    public Course(int id, String title) {
+        this.id = id;
         this.title = title;
     }
 
-    public Course(int courseid, String title, List<Lesson> lessons) {
-        this.courseid = courseid;
+    public Course(int id, String title, List<Lesson> lessons) {
+        this.id = id;
         this.title = title;
         this.lessons = lessons;
     }
 
-    public int getCourseid() {
-        return courseid;
+    public Course(String title, int percentageProgress) {
+        this.title = title;
+        this.percentageProgress = percentageProgress;
     }
 
-    public void setCourseid(int courseid) {
-        this.courseid = courseid;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -42,4 +48,11 @@ public class Course {
         this.lessons = lessons;
     }
 
+    public int getPercentageProgress() {
+        return percentageProgress;
+    }
+
+    public void setPercentageProgress(int percentageProgress) {
+        this.percentageProgress = percentageProgress;
+    }
 }

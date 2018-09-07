@@ -1,14 +1,22 @@
-package com.gcorso.cyberacademy.Explore;
+/*
+ *  Copyright (c) 2018 Gabriele Corso
+ *
+ *  Distributed under the MIT software license, see the accompanying
+ *  file LICENSE or http://www.opensource.org/licenses/mit-license.php.
+ */
+
+package com.gcorso.cyberacademy.activities;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.gcorso.cyberacademy.Objects.Section;
+import com.gcorso.cyberacademy.LessonsLDH;
 import com.gcorso.cyberacademy.R;
+import com.gcorso.cyberacademy.objects.Section;
 
 public class SectionActivity extends AppCompatActivity {
 
@@ -30,7 +38,7 @@ public class SectionActivity extends AppCompatActivity {
         final int lessonid = intent.getIntExtra("lessonid", 0);
         final int sectionn = intent.getIntExtra("sectionn", 0);
 
-        LessonsLDH lessonsLDH = new LessonsLDH(this);
+        LessonsLDH lessonsLDH = LessonsLDH.getInstance(this);
         section = lessonsLDH.getSection(lessonid, sectionn);
 
         pageTv = findViewById(R.id.page);
@@ -47,7 +55,7 @@ public class SectionActivity extends AppCompatActivity {
                 "drawable", getPackageName()));
         sectiontextTv.setText(section.getText());
 
-        String page = section.getLessontitle() + "  " + Integer.toString(sectionn+1) + "/" + Integer.toString(section.getLessonsections());
+        String page = section.getLessonTitle() + "  " + Integer.toString(sectionn+1) + "/" + Integer.toString(section.getLessonSections());
         pageTv.setText(page);
 
         closeBt.setOnClickListener(new View.OnClickListener() {
@@ -75,7 +83,7 @@ public class SectionActivity extends AppCompatActivity {
         navnextBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(sectionn<section.getLessonsections()-1){
+                if(sectionn<section.getLessonSections()-1){
                     Intent intent = new Intent(SectionActivity.this, SectionActivity.class);
                     intent.putExtra("sectionn", sectionn+1);
                     intent.putExtra("lessonid", lessonid);

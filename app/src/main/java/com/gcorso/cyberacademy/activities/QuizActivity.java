@@ -1,4 +1,11 @@
-package com.gcorso.cyberacademy.Explore;
+/*
+ *  Copyright (c) 2018 Gabriele Corso
+ *
+ *  Distributed under the MIT software license, see the accompanying
+ *  file LICENSE or http://www.opensource.org/licenses/mit-license.php.
+ */
+
+package com.gcorso.cyberacademy.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,9 +17,11 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.gcorso.cyberacademy.Objects.FitDoughnut;
-import com.gcorso.cyberacademy.Objects.Level;
+import com.gcorso.cyberacademy.LessonsLDH;
+import com.gcorso.cyberacademy.Preferences;
 import com.gcorso.cyberacademy.R;
+import com.gcorso.cyberacademy.layout.FitDoughnut;
+import com.gcorso.cyberacademy.objects.Level;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +52,7 @@ public class QuizActivity extends AppCompatActivity {
         Intent intent = getIntent();
         lessonid = intent.getIntExtra("lessonid", 0);
 
-        lessonsLDH = new LessonsLDH(this);
+        lessonsLDH = LessonsLDH.getInstance(this);
         String q = lessonsLDH.getQuestion(lessonid);
         lessontitle = lessonsLDH.getLessonTitle(lessonid);
 
@@ -104,20 +113,20 @@ public class QuizActivity extends AppCompatActivity {
             TextView tvResult = dialogView.findViewById(R.id.tvresult);
 
             if(tot == 10){
-                tvCompl.setText("Perfetto!");
+                tvCompl.setText("Perfect!");
             } else if (tot>=7){
-                tvCompl.setText("Complimenti!");
+                tvCompl.setText("Well Done!");
             } else {
-                tvCompl.setText("Riprova!");
+                tvCompl.setText("Try Again!");
                 tvCompl.setTextColor(getResources().getColor(R.color.wrong));
                 TextView tvExtra = dialogView.findViewById(R.id.tvextra);
                 tvExtra.setVisibility(View.VISIBLE);
             }
 
-            String res = "Punteggio:\n" + Integer.toString(tot) + "/10";
+            String res = "Score:\n" + Integer.toString(tot) + "/10";
             tvResult.setText(res);
 
-            String change = "+" + Integer.toString(ch) + "\nCyberPower";
+            String change = "+" + Integer.toString(ch) + "\n" + Preferences.SCORE_NAME;
             tvScore.setText(change);
 
             // level
@@ -133,8 +142,8 @@ public class QuizActivity extends AppCompatActivity {
             String prog = Integer.toString(level.getProg()) + " / " + Integer.toString(level.getTot());
             tvProg.setText(prog);
 
-            Button btRiprova = dialogView.findViewById(R.id.btRiprova);
-            btRiprova.setOnClickListener(new View.OnClickListener() {
+            Button btTryAgain = dialogView.findViewById(R.id.btTryAgain);
+            btTryAgain.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     dialog.dismiss();
@@ -168,21 +177,21 @@ public class QuizActivity extends AppCompatActivity {
         final int correctans;
 
         if(parts.length == 2){
-            // vero o falso
+            // true or false
             answersBt[0].setBackground(getResources().getDrawable(R.drawable.answerbox));
             answersBt[1].setBackground(getResources().getDrawable(R.drawable.answerbox));
-            answersBt[0].setText("Vero");
-            answersBt[1].setText("Falso");
+            answersBt[0].setText("True");
+            answersBt[1].setText("False");
             answersBt[2].setVisibility(View.GONE);
             answersBt[3].setVisibility(View.GONE);
 
-            if(parts[1].charAt(0)== 'V'){
-                correctans = 0;
-            } else {
+            if(parts[1].charAt(0)== 'F'){
                 correctans = 1;
+            } else {
+                correctans = 0;
             }
         } else {
-            // 4 opzioni
+            // 4 multiple choices
 
             List<Integer> list = new ArrayList<Integer>();
             list.add(0);

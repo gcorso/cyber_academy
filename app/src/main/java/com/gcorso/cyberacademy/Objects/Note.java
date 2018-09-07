@@ -1,4 +1,4 @@
-package com.gcorso.cyberacademy.Objects;
+package com.gcorso.cyberacademy.objects;
 
 public class Note {
     private int noteid;

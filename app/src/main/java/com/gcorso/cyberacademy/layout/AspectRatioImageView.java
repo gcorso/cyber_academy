@@ -1,4 +1,11 @@
-package com.gcorso.cyberacademy.Objects;
+/*
+ *  Copyright (c) 2018 Gabriele Corso
+ *
+ *  Distributed under the MIT software license, see the accompanying
+ *  file LICENSE or http://www.opensource.org/licenses/mit-license.php.
+ */
+
+package com.gcorso.cyberacademy.layout;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -19,8 +26,6 @@ public class AspectRatioImageView extends android.support.v7.widget.AppCompatIma
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //int height = MeasureSpec.getSize(heightMeasureSpec);
-        //int width = height * getDrawable().getIntrinsicWidth() / getDrawable().getIntrinsicHeight();
         int width = MeasureSpec.getSize(widthMeasureSpec);
         int height = width * getDrawable().getIntrinsicHeight() / getDrawable().getIntrinsicWidth();
 

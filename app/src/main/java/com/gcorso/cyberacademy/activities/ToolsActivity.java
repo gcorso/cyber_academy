@@ -1,4 +1,11 @@
-package com.gcorso.cyberacademy.Tools;
+/*
+ *  Copyright (c) 2018 Gabriele Corso
+ *
+ *  Distributed under the MIT software license, see the accompanying
+ *  file LICENSE or http://www.opensource.org/licenses/mit-license.php.
+ */
+
+package com.gcorso.cyberacademy.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,10 +23,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.gcorso.cyberacademy.ChatActivity;
-import com.gcorso.cyberacademy.Explore.HomeActivity;
-import com.gcorso.cyberacademy.ProfileActivity;
 import com.gcorso.cyberacademy.R;
+import com.gcorso.cyberacademy.vault.PasswordVaultActivity;
 
 public class ToolsActivity extends AppCompatActivity {
 
@@ -41,7 +46,6 @@ public class ToolsActivity extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 case R.id.navigation_tools:
-
                     return true;
                 case R.id.navigation_profile:
                     intent = new Intent(ToolsActivity.this, ProfileActivity.class);
@@ -64,7 +68,7 @@ public class ToolsActivity extends AppCompatActivity {
                 ActionBar.LayoutParams.MATCH_PARENT,
                 Gravity.CENTER);
         TextView textviewTitle = (TextView) viewActionBar.findViewById(R.id.actionbar_textview);
-        textviewTitle.setText("Strumenti");
+        textviewTitle.setText("Tools");
         abar.setCustomView(viewActionBar, params);
         abar.setDisplayShowCustomEnabled(true);
         abar.setDisplayShowTitleEnabled(false);
@@ -72,13 +76,6 @@ public class ToolsActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.setSelectedItemId(R.id.navigation_tools);
-
-        RelativeLayout itemData = findViewById(R.id.itemdata);
-        itemData.setOnClickListener(itemVuotoListener);
-        RelativeLayout itemAntivirus = findViewById(R.id.itemantivirus);
-        itemAntivirus.setOnClickListener(itemVuotoListener);
-        RelativeLayout itemVpn = findViewById(R.id.itemvpn);
-        itemVpn.setOnClickListener(itemVuotoListener);
 
         RelativeLayout itemVault = findViewById(R.id.itemvault);
         itemVault.setOnClickListener(new View.OnClickListener() {
@@ -121,16 +118,14 @@ public class ToolsActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
+        RelativeLayout itemData = findViewById(R.id.itemdata);
+        itemData.setOnClickListener(itemEmptyListener);
     }
 
-    View.OnClickListener itemVuotoListener = new View.OnClickListener() {
+    View.OnClickListener itemEmptyListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Toast.makeText(ToolsActivity.this, "Ci dispiace questa funzione non è ancora disponibile. Prova invece la password vault.", Toast.LENGTH_LONG).show();
+            Toast.makeText(ToolsActivity.this, "Sorry, this tool is not available yet.", Toast.LENGTH_LONG).show();
         }
     };
 }

@@ -1,4 +1,11 @@
-package com.gcorso.cyberacademy;
+/*
+ *  Copyright (c) 2018 Gabriele Corso
+ *
+ *  Distributed under the MIT software license, see the accompanying
+ *  file LICENSE or http://www.opensource.org/licenses/mit-license.php.
+ */
+
+package com.gcorso.cyberacademy.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,14 +18,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.gcorso.cyberacademy.Explore.HomeActivity;
-import com.gcorso.cyberacademy.Explore.LessonsLDH;
-import com.gcorso.cyberacademy.Objects.FitDoughnut;
-import com.gcorso.cyberacademy.Objects.Level;
-import com.gcorso.cyberacademy.Tools.ToolsActivity;
+import com.gcorso.cyberacademy.LessonsLDH;
+import com.gcorso.cyberacademy.R;
+import com.gcorso.cyberacademy.adapters.CoursesProgGridAdapter;
+import com.gcorso.cyberacademy.layout.ExpandableHeightGridView;
+import com.gcorso.cyberacademy.layout.FitDoughnut;
+import com.gcorso.cyberacademy.objects.Course;
+import com.gcorso.cyberacademy.objects.Level;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProfileActivity extends AppCompatActivity {
-
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -61,7 +72,7 @@ public class ProfileActivity extends AppCompatActivity {
                 ActionBar.LayoutParams.MATCH_PARENT,
                 Gravity.CENTER);
         TextView textviewTitle = (TextView) viewActionBar.findViewById(R.id.actionbar_textview);
-        textviewTitle.setText("Profilo");
+        textviewTitle.setText("Profile");
         abar.setCustomView(viewActionBar, params);
         abar.setDisplayShowCustomEnabled(true);
         abar.setDisplayShowTitleEnabled(false);
@@ -70,9 +81,10 @@ public class ProfileActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.setSelectedItemId(R.id.navigation_profile);
 
-        LessonsLDH lessonsLDH = new LessonsLDH(this);
+        LessonsLDH lessonsLDH = LessonsLDH.getInstance(this);
         Level level = lessonsLDH.getLevel();
 
+        // set up the overall level
         FitDoughnut doughnut = (FitDoughnut) findViewById(R.id.doughnuttot);
         doughnut.animateSetPercent((float) level.getPerctot());
         TextView tvperctot = findViewById(R.id.tvpercentage);
@@ -84,16 +96,15 @@ public class ProfileActivity extends AppCompatActivity {
         String prog = Integer.toString(level.getProg()) + " / " + Integer.toString(level.getTot());
         tvProg.setText(prog);
 
-        FitDoughnut[] dcourses = {findViewById(R.id.doughnut1), findViewById(R.id.doughnut2), findViewById(R.id.doughnut3),
-                findViewById(R.id.doughnut4), findViewById(R.id.doughnut5), findViewById(R.id.doughnut6)};
-        TextView[] tvperccourses = new TextView[]{findViewById(R.id.tvpercentage1), findViewById(R.id.tvpercentage2), findViewById(R.id.tvpercentage3),
-                findViewById(R.id.tvpercentage4), findViewById(R.id.tvpercentage5), findViewById(R.id.tvpercentage6)};
-
-        for(int i = 0; i<6; i++){
-            dcourses[i].animateSetPercent((float) level.getPerccourses()[i]);
-            String t = level.getPerccourses()[i] + "%";
-            tvperccourses[i].setText(t);
+        ExpandableHeightGridView gridCourses = findViewById(R.id.gridCoursesProg);
+        List<Course> courses = new ArrayList<>();
+        List<String> coursesTitles = lessonsLDH.getCoursesNames();
+        for(int i = 0; i<coursesTitles.size(); i++){
+            courses.add(new Course(coursesTitles.get(i), level.getPerccourses()[i]));
         }
+        CoursesProgGridAdapter coursesAdapter = new CoursesProgGridAdapter(courses);
+        gridCourses.setAdapter(coursesAdapter);
+        gridCourses.setExpanded(true);
 
 
     }

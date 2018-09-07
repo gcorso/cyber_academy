@@ -1,4 +1,11 @@
-package com.gcorso.cyberacademy.Explore;
+/*
+ *  Copyright (c) 2018 Gabriele Corso
+ *
+ *  Distributed under the MIT software license, see the accompanying
+ *  file LICENSE or http://www.opensource.org/licenses/mit-license.php.
+ */
+
+package com.gcorso.cyberacademy.adapters;
 
 import android.content.Context;
 import android.support.v17.leanback.widget.HorizontalGridView;
@@ -9,14 +16,10 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.gcorso.cyberacademy.Objects.Course;
 import com.gcorso.cyberacademy.R;
+import com.gcorso.cyberacademy.objects.Course;
 
 import java.util.List;
-
-/**
- * Adapter to manage and display the list view used for searched courses in the Search activity
- */
 
 public class CoursesListAdapter extends BaseAdapter {
 
@@ -55,13 +58,10 @@ public class CoursesListAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "Click course", Toast.LENGTH_SHORT).show();
-                /*Intent intent = new Intent(context, BookActivity.class);
-                intent.putExtra("bookId", courses.get(position).getBookId());
-                context.startActivity(intent);*/
             }
         });
 
-        LessonsHorizAdapter lessonsAdapter = new LessonsHorizAdapter(context, courses.get(position).getLessons(), courses.get(position).getCourseid());
+        LessonsHorizAdapter lessonsAdapter = new LessonsHorizAdapter(context, courses.get(position).getLessons(), courses.get(position).getId());
         HorizontalGridView lessonsView = view.findViewById(R.id.gridlessons);
         lessonsView.setAdapter(lessonsAdapter);
 

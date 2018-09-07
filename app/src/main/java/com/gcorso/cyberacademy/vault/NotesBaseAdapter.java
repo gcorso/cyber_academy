@@ -1,4 +1,4 @@
-package com.gcorso.cyberacademy.Tools;
+package com.gcorso.cyberacademy.vault;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -6,8 +6,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.gcorso.cyberacademy.Objects.Note;
 import com.gcorso.cyberacademy.R;
+import com.gcorso.cyberacademy.objects.Note;
 
 import java.util.ArrayList;
 import java.util.List;

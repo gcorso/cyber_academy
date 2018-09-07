@@ -1,29 +1,29 @@
-package com.gcorso.cyberacademy.Objects;
+package com.gcorso.cyberacademy.objects;
 
 public class Section {
-    private int lessonid;
-    private int sectionn;
+    private int lessonId;
+    private int sectionN;
     private String title;
     private String text;
-    private String lessontitle;
-    private int lessonsections;
+    private String lessonTitle;
+    private int lessonSections;
 
-    public Section(int lessonid, int sectionn, String title, String text, String lessontitle, int lessonsections) {
-        this.lessonid = lessonid;
-        this.sectionn = sectionn;
+    public Section(int lessonId, int sectionN, String title, String text, String lessonTitle, int lessonSections) {
+        this.lessonId = lessonId;
+        this.sectionN = sectionN;
         this.title = title;
         this.text = text;
-        this.lessontitle = lessontitle;
-        this.lessonsections = lessonsections;
+        this.lessonTitle = lessonTitle;
+        this.lessonSections = lessonSections;
     }
 
 
-    public int getLessonid() {
-        return lessonid;
+    public int getLessonId() {
+        return lessonId;
     }
 
-    public void setLessonid(int lessonid) {
-        this.lessonid = lessonid;
+    public void setLessonId(int lessonId) {
+        this.lessonId = lessonId;
     }
 
     public String getTitle() {
@@ -42,27 +42,27 @@ public class Section {
         this.text = text;
     }
 
-    public String getLessontitle() {
-        return lessontitle;
+    public String getLessonTitle() {
+        return lessonTitle;
     }
 
-    public void setLessontitle(String lessontitle) {
-        this.lessontitle = lessontitle;
+    public void setLessonTitle(String lessonTitle) {
+        this.lessonTitle = lessonTitle;
     }
 
-    public int getSectionn() {
-        return sectionn;
+    public int getSectionN() {
+        return sectionN;
     }
 
-    public void setSectionn(int sectionn) {
-        this.sectionn = sectionn;
+    public void setSectionN(int sectionN) {
+        this.sectionN = sectionN;
     }
 
-    public void setLessonsections(int lessonsections) {
-        this.lessonsections = lessonsections;
+    public void setLessonSections(int lessonSections) {
+        this.lessonSections = lessonSections;
     }
 
-    public int getLessonsections() {
-        return lessonsections;
+    public int getLessonSections() {
+        return lessonSections;
     }
 }

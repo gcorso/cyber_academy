@@ -1,4 +1,11 @@
-package com.gcorso.cyberacademy.Objects;
+/*
+ *  Copyright (c) 2018 Gabriele Corso
+ *
+ *  Distributed under the MIT software license, see the accompanying
+ *  file LICENSE or http://www.opensource.org/licenses/mit-license.php.
+ */
+
+package com.gcorso.cyberacademy.layout;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
@@ -267,6 +274,10 @@ public class FitDoughnut extends ViewGroup {
         tailAnimator.start();
     }
 
+    public void setColorPrimary(int colorPrimary) {
+        this.colorPrimary = colorPrimary;
+        paintPrimary.setColor(colorPrimary);
+    }
 
 
     //endregion

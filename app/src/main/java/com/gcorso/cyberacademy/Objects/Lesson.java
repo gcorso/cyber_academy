@@ -1,41 +1,41 @@
-package com.gcorso.cyberacademy.Objects;
+package com.gcorso.cyberacademy.objects;
 
 import java.util.List;
 
 public class Lesson {
-    private int lessonid;
+    private int id;
     private String title;
     private List<String> sections;
     private int result;
-    private int courseid;
-    private int nsections;
+    private int courseId;
+    private int numberOfSections;
 
-    public Lesson(int lessonid, String title, List<String> sections, int result, int courseid) {
-        this.lessonid = lessonid;
+    public Lesson(int id, String title, List<String> sections, int result, int courseId) {
+        this.id = id;
         this.title = title;
         this.sections = sections;
         this.result = result;
-        this.courseid = courseid;
+        this.courseId = courseId;
     }
 
-    public Lesson(int lessonid, String title) {
-        this.lessonid = lessonid;
+    public Lesson(int id, String title) {
+        this.id = id;
         this.title = title;
     }
 
-    public Lesson(int lessonid, String title, int result, int nsections) {
-        this.lessonid = lessonid;
+    public Lesson(int id, String title, int result, int numberOfSections) {
+        this.id = id;
         this.title = title;
         this.result = result;
-        this.nsections = nsections;
+        this.numberOfSections = numberOfSections;
     }
 
-    public int getLessonid() {
-        return lessonid;
+    public int getId() {
+        return id;
     }
 
-    public void setLessonid(int lessonid) {
-        this.lessonid = lessonid;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -62,19 +62,19 @@ public class Lesson {
         this.result = result;
     }
 
-    public int getCourseid() {
-        return courseid;
+    public int getCourseId() {
+        return courseId;
     }
 
-    public void setCourseid(int courseid) {
-        this.courseid = courseid;
+    public void setCourseId(int courseId) {
+        this.courseId = courseId;
     }
 
-    public int getNsections() {
-        return nsections;
+    public int getNumberOfSections() {
+        return numberOfSections;
     }
 
-    public void setNsections(int nsections) {
-        this.nsections = nsections;
+    public void setNumberOfSections(int numberOfSections) {
+        this.numberOfSections = numberOfSections;
     }
 }

@@ -1,4 +1,4 @@
-package com.gcorso.cyberacademy.Tools;
+package com.gcorso.cyberacademy.vault;
 
 /**
  * Implementation of the Tiny Encryption Algorithm (TEA) by David Wheeler and Roger Needham at the Computer Laboratory of Cambridge University.

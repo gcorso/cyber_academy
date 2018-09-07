@@ -1,18 +1,24 @@
-package com.gcorso.cyberacademy;
+/*
+ *  Copyright (c) 2018 Gabriele Corso
+ *
+ *  Distributed under the MIT software license, see the accompanying
+ *  file LICENSE or http://www.opensource.org/licenses/mit-license.php.
+ */
+
+package com.gcorso.cyberacademy.activities;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.gcorso.cyberacademy.Explore.HomeActivity;
-import com.gcorso.cyberacademy.Tools.ToolsActivity;
+import com.gcorso.cyberacademy.R;
 
 public class ChatActivity extends AppCompatActivity {
 

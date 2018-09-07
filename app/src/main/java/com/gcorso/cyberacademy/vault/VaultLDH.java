@@ -1,4 +1,4 @@
-package com.gcorso.cyberacademy.Tools;
+package com.gcorso.cyberacademy.vault;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.gcorso.cyberacademy.Objects.Note;
+import com.gcorso.cyberacademy.objects.Note;
 
 import java.util.ArrayList;
 import java.util.List;

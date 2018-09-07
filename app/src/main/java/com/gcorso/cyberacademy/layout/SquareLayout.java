@@ -1,4 +1,11 @@
-package com.gcorso.cyberacademy.Objects;
+/*
+ *  Copyright (c) 2018 Gabriele Corso
+ *
+ *  Distributed under the MIT software license, see the accompanying
+ *  file LICENSE or http://www.opensource.org/licenses/mit-license.php.
+ */
+
+package com.gcorso.cyberacademy.layout;
 
 import android.content.Context;
 import android.os.Build;

@@ -174,7 +174,7 @@
             android:textSize="16sp"/>
 
         <Button
-            android:id="@+id/btRiprova"
+            android:id="@+id/btTryAgain"
             android:layout_width="wrap_content"
             android:layout_height="45dp"
             android:layout_weight="0.50"

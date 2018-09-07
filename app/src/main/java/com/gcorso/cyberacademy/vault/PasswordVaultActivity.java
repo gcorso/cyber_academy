@@ -1,4 +1,4 @@
-package com.gcorso.cyberacademy.Tools;
+package com.gcorso.cyberacademy.vault;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -20,11 +20,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.gcorso.cyberacademy.ChatActivity;
-import com.gcorso.cyberacademy.Explore.HomeActivity;
-import com.gcorso.cyberacademy.Objects.Note;
-import com.gcorso.cyberacademy.ProfileActivity;
 import com.gcorso.cyberacademy.R;
+import com.gcorso.cyberacademy.activities.ChatActivity;
+import com.gcorso.cyberacademy.activities.HomeActivity;
+import com.gcorso.cyberacademy.activities.ProfileActivity;
+import com.gcorso.cyberacademy.activities.ToolsActivity;
+import com.gcorso.cyberacademy.objects.Note;
 
 import java.util.List;
 

@@ -19,7 +19,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginBottom="10dp"
             android:fontFamily="casual"
-            android:text="Nuova nota"
+            android:text="New note"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textSize="22sp"/>
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/notetitle"
             android:fontFamily="casual"
-            android:text="Tante cose belle"/>
+            android:text="Note text "/>
 
 
     </RelativeLayout>
@@ -55,10 +55,10 @@
             android:layout_weight="0.50"
             android:background="@color/neutral"
             android:elegantTextHeight="false"
-            android:text="COPIA TESTO"
+            android:fontFamily="casual"
+            android:text="COPY TEXT"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button"
             android:textColor="@android:color/white"
-            android:fontFamily="casual"
             android:textSize="16sp"/>
 
         <Button
@@ -67,10 +67,10 @@
             android:layout_height="45dp"
             android:layout_weight="0.50"
             android:background="#ffffffff"
-            android:text="ELIMINA NOTA"
+            android:fontFamily="casual"
+            android:text="DELETE NOTE"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button"
             android:textColor="@color/neutral"
-            android:fontFamily="casual"
             android:textSize="16sp"/>
     </LinearLayout>
 

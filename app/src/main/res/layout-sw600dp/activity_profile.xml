@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
+    tools:context=".activities.ProfileActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -36,7 +36,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="casual"
-                        android:text="Principiante"
+                        android:text="Beginner"
                         android:textAlignment="center"
                         android:textColor="@color/neutral"
                         android:textSize="40sp"
@@ -55,7 +55,7 @@
 
                 </LinearLayout>
 
-                <com.gcorso.cyberacademy.Objects.FitDoughnut
+                <com.gcorso.academy.Layout.FitDoughnut
                     android:id="@+id/doughnuttot"
                     android:layout_width="300dp"
                     android:layout_height="300dp"
@@ -110,7 +110,7 @@
                         android:layout_weight="1"
                         android:orientation="horizontal">
 
-                        <com.gcorso.cyberacademy.Objects.FitDoughnut
+                        <com.gcorso.academy.Layout.FitDoughnut
                             android:id="@+id/doughnut1"
                             android:layout_width="@dimen/dounughtprof_tab"
                             android:layout_height="@dimen/dounughtprof_tab"
@@ -145,7 +145,7 @@
                             android:layout_centerHorizontal="true"
                             android:fontFamily="casual"
                             android:gravity="center"
-                            android:text="Concetti chiave"
+                            android:text="Course 1"
                             android:textAlignment="center"
                             android:textColor="@color/course1"
                             android:textSize="@dimen/titlprof_tab"
@@ -159,7 +159,7 @@
                         android:layout_weight="1"
                         android:orientation="horizontal">
 
-                        <com.gcorso.cyberacademy.Objects.FitDoughnut
+                        <com.gcorso.academy.Layout.FitDoughnut
                             android:id="@+id/doughnut2"
                             android:layout_width="@dimen/dounughtprof_tab"
                             android:layout_height="@dimen/dounughtprof_tab"
@@ -194,7 +194,7 @@
                             android:layout_centerHorizontal="true"
                             android:fontFamily="casual"
                             android:gravity="center"
-                            android:text="Attacchi"
+                            android:text="Course 2"
                             android:textAlignment="center"
                             android:textColor="@color/course2"
                             android:textSize="@dimen/titlprof_tab"
@@ -215,7 +215,7 @@
                         android:layout_weight="1"
                         android:orientation="horizontal">
 
-                        <com.gcorso.cyberacademy.Objects.FitDoughnut
+                        <com.gcorso.academy.Layout.FitDoughnut
                             android:id="@+id/doughnut3"
                             android:layout_width="@dimen/dounughtprof_tab"
                             android:layout_height="@dimen/dounughtprof_tab"
@@ -250,7 +250,7 @@
                             android:layout_centerHorizontal="true"
                             android:fontFamily="casual"
                             android:gravity="center"
-                            android:text="Social Networks"
+                            android:text="Course 3"
                             android:textAlignment="center"
                             android:textColor="@color/course3"
                             android:textSize="@dimen/titlprof_tab"
@@ -264,7 +264,7 @@
                         android:layout_weight="1"
                         android:orientation="horizontal">
 
-                        <com.gcorso.cyberacademy.Objects.FitDoughnut
+                        <com.gcorso.academy.Layout.FitDoughnut
                             android:id="@+id/doughnut4"
                             android:layout_width="@dimen/dounughtprof_tab"
                             android:layout_height="@dimen/dounughtprof_tab"
@@ -299,7 +299,7 @@
                             android:layout_centerHorizontal="true"
                             android:fontFamily="casual"
                             android:gravity="center"
-                            android:text="Privacy"
+                            android:text="Course 4"
                             android:textAlignment="center"
                             android:textColor="@color/course4"
                             android:textSize="@dimen/titlprof_tab"
@@ -318,7 +318,7 @@
                         android:layout_weight="1"
                         android:orientation="horizontal">
 
-                        <com.gcorso.cyberacademy.Objects.FitDoughnut
+                        <com.gcorso.academy.Layout.FitDoughnut
                             android:id="@+id/doughnut5"
                             android:layout_width="@dimen/dounughtprof_tab"
                             android:layout_height="@dimen/dounughtprof_tab"
@@ -353,7 +353,7 @@
                             android:layout_centerHorizontal="true"
                             android:fontFamily="casual"
                             android:gravity="center"
-                            android:text="Internet"
+                            android:text="Course 5"
                             android:textAlignment="center"
                             android:textColor="@color/course5"
                             android:textSize="@dimen/titlprof_tab"
@@ -367,7 +367,7 @@
                         android:layout_weight="1"
                         android:orientation="horizontal">
 
-                        <com.gcorso.cyberacademy.Objects.FitDoughnut
+                        <com.gcorso.academy.Layout.FitDoughnut
                             android:id="@+id/doughnut6"
                             android:layout_width="@dimen/dounughtprof_tab"
                             android:layout_height="@dimen/dounughtprof_tab"
@@ -402,7 +402,7 @@
                             android:layout_centerHorizontal="true"
                             android:fontFamily="casual"
                             android:gravity="center"
-                            android:text="Sviluppatori"
+                            android:text="Course 6"
                             android:textAlignment="center"
                             android:textColor="@color/course6"
                             android:textSize="@dimen/titlprof_tab"
