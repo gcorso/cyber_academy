@@ -9,3 +9,10 @@ Download it on the [Google Play Store](https://play.google.com/store/apps/detail
 </p>
 
 Cyber Academy was developed based on the template Android Academy. Visit [its repository](https://github.com/gcorso/android_academy) for further details.
+
+### Contributors:
+
+* [Gabriele Corso](https://github.com/gcorso)
+* [Charles Johnson](https://github.com/cehjohnson)
+* [Alessandro Corso](https://github.com/AleCorso)
+* Luca Muscarella
